@@ -24,15 +24,15 @@ class _LoadingState extends State<Loading> {
     airspeed = instance.airSpeed;
     des = instance.description;
     main = instance.main;
-    Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, '/home', arguments: {
-        "temp_value": temp,
-        "hum_value": hum,
-        "airspeed_value": airspeed,
-        "des_value": des,
-        "main_value": main
-      });
-    });
+    //Future.delayed(Duration(seconds: 4), () {
+      //Navigator.pushReplacementNamed(context, '/home', arguments: {
+      //   "temp_value": temp,
+      //   "hum_value": hum,
+      //   "airspeed_value": airspeed,
+      //   "des_value": des,
+      //   "main_value": main
+     // });
+    //});
   }
 
   @override
@@ -45,6 +45,8 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -62,37 +64,37 @@ class _LoadingState extends State<Loading> {
           children: <Widget>[
             Image.asset(
               'images/weather_logo.png',
-              height: 240,
-              width: 240,
+              height: screenHeight*0.3,
+              width: screenWidth*0.6,
             ),
             SizedBox(
-              height: 10,
+              height: screenHeight*0.01,
             ),
             Text(
               "Weather App",
               style: TextStyle(
-                  fontSize: 45,
+                  fontSize: screenWidth*0.09945,
                   fontWeight: FontWeight.w500,
                   color: Colors.white,
               fontFamily: "fonts/Roboto-BoldItalic.ttf"),
             ),
             SizedBox(
-              height: 15,
+              height: screenHeight*0.015,
             ),
             Text(
               "By Alefiya",
               style: TextStyle(
-                  fontSize: 25,
+                  fontSize: screenHeight*0.025,
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
               fontFamily: "fonts/Roboto-MediumItalic.ttf"),
             ),
             SizedBox(
-              height: 30,
+              height: screenHeight*0.03,
             ),
             SpinKitWave(
               color: Colors.blueAccent,
-              size: 50.0,
+              size: screenHeight*0.05,
             )
           ],
         ),
