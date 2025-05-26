@@ -24,15 +24,15 @@ class _LoadingState extends State<Loading> {
     airspeed = instance.airSpeed;
     des = instance.description;
     main = instance.main;
-    //Future.delayed(Duration(seconds: 4), () {
-      //Navigator.pushReplacementNamed(context, '/home', arguments: {
-      //   "temp_value": temp,
-      //   "hum_value": hum,
-      //   "airspeed_value": airspeed,
-      //   "des_value": des,
-      //   "main_value": main
-     // });
-    //});
+    Future.delayed(Duration(seconds: 4), () {
+      Navigator.pushReplacementNamed(context, '/home', arguments: {
+        "temp_value": temp,
+        "hum_value": hum,
+        "airspeed_value": airspeed,
+        "des_value": des,
+        "main_value": main
+     });
+    });
   }
 
   @override
