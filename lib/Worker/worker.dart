@@ -14,6 +14,7 @@ class worker {
   late String airSpeed;
   late String description;
   late String main;
+  late String icon;
 
   Future<void> getData() async {
     try {
@@ -30,6 +31,7 @@ class worker {
       Map weather_main_data = weather_data[0];
       String getmain = weather_main_data['main'];
       String getdes = weather_main_data['description'].toString();
+      String geticon = weather_main_data['icon'].toString();
 
       //wind
       Map wind = data['wind'];
@@ -42,14 +44,16 @@ class worker {
       airSpeed = getairSpeed.toString(); // km/hour
       description = getdes;
       main = getmain;
+      icon = geticon;
     }
     catch(e)
     {
-      temp = "Can't Find Data";
-      humidity = "Can't Find Data";
-      airSpeed = "Can't Find Data";
+      temp = "NA";
+      humidity = "NA";
+      airSpeed = "NA";
       description ="Can't Find Data";
-      main = "Can't Find Data";
+      main = "NA";
+      icon = "03n";
     }
   }
 }

@@ -9,6 +9,7 @@ void main() {
     routes: {
       "/" : (context)=>Loading(),
       "/home" : (context)=>Home(),
+      "/loading" : (context)=>Loading(),
     },
     debugShowCheckedModeBanner: false,
   ));
